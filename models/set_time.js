@@ -14,12 +14,31 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   set_time.init({
-    event_id: DataTypes.SMALLINT,
-    stage_id: DataTypes.SMALLINT,
-    band_id: DataTypes.SMALLINT,
-    start_time: DataTypes.DATE,
-    end_time: DataTypes.DATE,
-    set_time_id: DataTypes.INTEGER
+    set_time_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    event_id: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
+    },
+    stage_id: {
+      type: DataTypes.SMALLINT,
+      allowNull: false,
+    },
+    band_id: {
+      type: DataTypes.SMALLINT,
+      allowNull: false,
+    },
+    start_time: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    end_time: {
+      type: DataTypes.DATE,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'set_time',
