@@ -41,7 +41,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'set_time',
+    modelName: 'SetTime',
+    tableName: 'set_time',
+    timestamps: false
   });
   return set_time;
 };

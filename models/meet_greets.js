@@ -14,14 +14,32 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   meet_greets.init({
-    meet_greet_id: DataTypes.INTEGER,
-    event_id: DataTypes.SMALLINT,
-    band_id: DataTypes.SMALLINT,
-    meet_start_time: DataTypes.DATE,
-    meet_end_time: DataTypes.DATE
+    meet_greet_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    event_id: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
+    },
+    band_id: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
+    },
+    meet_start_time: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    meet_end_time: {
+      type: DataTypes.DATE,
+      allowNull: false
+    }
   }, {
     sequelize,
-    modelName: 'meet_greets',
+    modelName: 'MeetGreet',
+    tableName: 'meet_greets',
+    timestamps: false
   });
   return meet_greets;
 };
