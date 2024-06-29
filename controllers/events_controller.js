@@ -77,4 +77,4 @@ events.delete('/:id', async (req, res) => {
 })
 
 // EXPORT
-module.exports = events
+module.exports = events 
