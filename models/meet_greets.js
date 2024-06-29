@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   
-  meet_greets.init({
+  MeetGreet.init({
     meet_greet_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -41,5 +41,5 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'meet_greets',
     timestamps: false
   });
-  return meet_greets;
+  return MeetGreet;
 };
